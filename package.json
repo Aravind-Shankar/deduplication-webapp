@@ -1,0 +1,16 @@
+{
+  "name": "webapp",
+  "version": "1.0.0",
+  "description": "Web app for uploading files and running deduplication program",
+  "main": "js/getfiles.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Aravind Shankar <shankaravind167@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^2.3.4",
+    "formidable": "^1.0.17",
+    "multer": "^1.1.0"
+  }
+}

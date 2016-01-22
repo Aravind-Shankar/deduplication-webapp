@@ -1,0 +1,89 @@
+<link href='http://fonts.googleapis.com/css?family=Bitter' rel='stylesheet' type='text/css'>
+<style type="text/css">
+.top{
+    width:60%;
+    padding:30px;
+    margin:auto;
+    border-style:groove;
+    background: #FFFAF0;
+    border-radius: 10px;
+    -webkit-border-radius:100px;
+    -moz-border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.13);
+    -moz-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.13);
+    -webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.13);
+}
+.top .inner-wrap{
+    width:50%;
+    margin:auto;
+    padding: 30px;
+    background: #F8F8F8;
+    border-radius: 6px;
+    margin-bottom: 15px;
+}
+.top h1{
+    text-align: center;
+    background: #FDF5E6;
+    padding: 20px 30px 15px 30px;
+    margin: -30px -30px 30px -30px;
+    border-radius: 10px 10px 0 0;
+    -webkit-border-radius: 10px 10px 0 0;
+    -moz-border-radius: 10px 10px 0 0;
+    color: #280000;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.12);
+    font: normal 100px 'Bitter', serif;
+    border: 110px solid #FDF5E6;
+}
+.top h1 > span{
+    display: block;
+    margin-top: 2px;
+    font: 25px Arial, Helvetica, sans-serif;
+}
+.top h2{
+    text-align: center;
+    background: #FAEBD7;
+    padding: 20px 30px 15px 30px;
+    margin: -30px -30px 30px -30px;
+    border-radius: 10px 10px 0 0;
+    -webkit-border-radius: 10px 10px 0 0;
+    -moz-border-radius: 10px 10px 0 0;
+    color: #000000;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.12);
+    font: normal 20px 'Bitter', serif;
+    -moz-box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.17);
+    -webkit-box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.17);
+    box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.17);
+    border: 2px solid #000000;
+}
+.bottom h1{
+    text-align: center;
+    color: #FFFFE0;
+    text-shadow: 15px 15px 15px rgba(0, 0, 0, 0.12);
+    font: normal 50px 'Bitter', serif;
+}
+.bottom img.left{
+    position: absolute;
+    left: 20%;
+}
+.bottom img.right{
+    position: absolute;
+    left: 55%;
+}
+
+.bottom input[type="submit"]{
+    position: absolute;
+    left: 46.5%;
+    background: #FDF5E6;
+    padding: 8px 20px 8px 20px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    color: #280000;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.12);
+    font: normal 30px 'Bitter', serif;
+    -moz-box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.17);
+    -webkit-box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.17);
+    box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.17);
+    border: 1px solid #280000;
+    font-size: 20px;
+}
