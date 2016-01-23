@@ -12,6 +12,10 @@
 		form.inline {
 			display: inline;
 		}
+		input.upload {
+			position: absolute;
+			left: 45%;
+		}
 		</style>
 		<title>
 			Deduplication
@@ -27,35 +31,53 @@
 		<h2>Created by Aravind Shankar, G.Kavitha, Kaushik<br> Computer Vision Group IITM</h2>
 		</div>
 
+		<% if (posted === true) { %>
+		<div>
+		<h3>Duplication Score: <%= distance %></h3>
+		<h3>Maximum score for classification as duplicates: <%= thresh %></h3>
+		<h3>
+			<% if (areDupes === true) { %>The images are duplicates.
+			<% } else { %>The images are different.
+			<% } %>
+		</h3>
+		</div>
+		<% } %>
+
 		<div class="bottom">
-		<h1> Choose any 2 images </h1>
-		<img class ="left" src="../images/db1.jpg" width=24.5% height=40%>
-		<form class="inline" action="/" method="post" enctype="multipart/form-data">
-			<input type="submit" value="Compare"/>
-			<input type="hidden" name="sampleImage1" value="images/db1.jpg"/>
-			<input type="hidden" name="sampleImage2" value="images/q1.jpg"/>
+		<h1> Upload images from this computer </h1>
+		<form action="/" method="post" enctype="multipart/form-data">
+			<input type="file" name="image1" class="upload"><br>
+			<input type="file" name="image2" class="upload"><br>
+			<input type="submit" value="Compare">
 		</form>
-		<img class="right" src="../images/q1.jpg" width=24.5% height=40%>
+		<h1> Or choose any pair of these images </h1>
+		<img class ="left" src="../images/db1.jpg" width=24.5% height=40%/>
+		<form class="inline" action="/" method="post" enctype="multipart/form-data">
+			<input type="submit" value="Compare">
+			<input type="hidden" name="sampleImage1" value="images/db1.jpg">
+			<input type="hidden" name="sampleImage2" value="images/q1.jpg">
+		</form>
+		<img class="right" src="../images/q1.jpg" width=24.5% height=40%/>
 		<br><br><br><br><br><br><br><br><br><br><br><br><br>
 		<br><br><br><br><br><br><br><br><br><br><br><br><br>
 
-		<img class="left" src="../images/db2.jpg" width=24.5% height=40%>
+		<img class="left" src="../images/db2.jpg" width=24.5% height=40%/>
 		<form class="inline" action="/" method="post" enctype="multipart/form-data">
-			<input type="submit" value="Compare"/>
-			<input type="hidden" name="sampleImage1" value="images/db2.jpg"/>
-			<input type="hidden" name="sampleImage2" value="images/q2.jpg"/>
+			<input type="submit" value="Compare">
+			<input type="hidden" name="sampleImage1" value="images/db2.jpg">
+			<input type="hidden" name="sampleImage2" value="images/q2.jpg">
 		</form>
-		<img class ="right" src="../images/q2.jpg" width=24.5% height=40%>	
+		<img class ="right" src="../images/q2.jpg" width=24.5% height=40%/>	
 		<br><br><br><br><br><br><br><br><br><br><br><br><br>
 		<br><br><br><br><br><br><br><br><br><br><br><br><br>
 
-		<img class="left" src="../images/db3.jpg" width=24.5% height=40%>	
+		<img class="left" src="../images/db3.jpg" width=24.5% height=40%/>	
 		<form class="inline" action="/" method="post" enctype="multipart/form-data">
-			<input type="submit" value="Compare"/>
-			<input type="hidden" name="sampleImage1" value="images/db3.jpg"/>
-			<input type="hidden" name="sampleImage2" value="images/q3.jpg"/>
+			<input type="submit" value="Compare">
+			<input type="hidden" name="sampleImage1" value="images/db3.jpg">
+			<input type="hidden" name="sampleImage2" value="images/q3.jpg">
 		</form>
-		<img class="right" src="../images/q3.jpg" width=24.5% height=40%>
+		<img class="right" src="../images/q3.jpg" width=24.5% height=40%/>
 		</div>
 	</body>
 </html>

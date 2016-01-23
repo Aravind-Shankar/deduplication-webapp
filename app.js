@@ -6,6 +6,7 @@ var multer = require('multer');
 var upload = multer({dest: 'images/'});
 var util = require('util');
 var spawn = require('child_process').spawnSync;
+var fs = require('fs');
 var app = express();
 
 // set the view engine to ejs
@@ -22,41 +23,41 @@ function runProgram(image1Path, image2Path) {
 
 var upFields = upload.fields([{name: "image1"}, {name: "image2"}]);
 app.post('/', upFields, function(req, res) {
-	console.log('in post request');
 	var image1Path, image2Path;
+	var uploaded;
 	// check if this came from sample images or image upload
 	// sample images will have a 'sampleImage1' member
-	if (req.body.hasOwnProperty('sampleImage1')) {
+	if (Object.prototype.hasOwnProperty.call(req.body, 'sampleImage1')) {
 		// sample image; just get the paths from 'req.body' itself
+		uploaded = false;
 		image1Path = req.body.sampleImage1.toString();
 		image2Path = req.body.sampleImage2.toString();
 	}
 	else {
 		// files uploaded; get paths from 'req.files'
 		// req.files.image1[0] has image 1, and similarly for image 2 (image2[0]).
+		uploaded = true;
 		image1Path = req.files.image1[0].path;
 		image2Path = req.files.image2[0].path;
 	}
 
-	var output = runProgram(image1Path, image2Path);
-	res.end(output);
+	var output = runProgram(image1Path, image2Path).split(" ");
+	var distance = parseInt(output[0]);
+	var thresh = parseInt(output[1]);
+	var areDupes = (distance < thresh);
+
+	// if files uploaded, delete them
+	if (uploaded === true) {
+		fs.unlink(image1Path);
+		fs.unlink(image2Path);
+	}
+
 	// by default res.render() looks into the 'views' folder
-	/*res.render('index', function(err, html) {
-		if (err) {
-			res.end(err.message);
-			return;
-		}
-		res.send(html);
-	});*/
+	res.render('index', {posted: true, distance: distance, thresh: thresh, areDupes: areDupes});
 });
 
-/*app.post('/', function(req, res) {
-	console.log('in plain post request');
-	res.render('index');
-});*/
-
 app.get('/', function(req, res) {
-	res.render('index');
+	res.render('index', {posted: false});
 });
 
 var PORT_NUMBER = 8080;
