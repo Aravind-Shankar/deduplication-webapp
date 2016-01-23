@@ -12,5 +12,6 @@
     "ejs": "^2.3.4",
     "formidable": "^1.0.17",
     "multer": "^1.1.0"
-  }
+  },
+  "repository": "git@github.com:Aravind-Shankar/deduplication-webapp.git"
 }
