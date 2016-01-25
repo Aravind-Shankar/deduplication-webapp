@@ -16,6 +16,9 @@
 			position: absolute;
 			left: 45%;
 		}
+		div.output {
+			color: Yellow;
+		}
 		</style>
 		<title>
 			Deduplication
@@ -25,21 +28,21 @@
 	<body>
 		<div class="top">
 		<br><br><br><br><br><br><br>
-		<img align="left" width=20% height=20% src="../assets/iitm.jpg">
-		<img align="right" width=20% height=20% src="../assets/cfi.jpg">
+		<img align="left" width=20% height=40% src="../assets/iitm.jpg">
+		<img align="right" width=20% height=40% src="../assets/cfi.jpg">
 		<h1>Deduplication<span>Eliminate Redundancy</span></h1>
 		<h2>Created by Aravind Shankar, G.Kavitha, Kaushik<br> Computer Vision Group IITM</h2>
 		</div>
 
 		<% if (posted === true) { %>
-		<div>
-		<h3>Duplication Score: <%= distance %></h3>
-		<h3>Maximum score for classification as duplicates: <%= thresh %></h3>
-		<h3>
+		<div class="output">
+		<h2>Duplication Score: <%= distance %></h2>
+		<h2>Maximum score for classification as duplicates: <%= thresh %></h2>
+		<h2>
 			<% if (areDupes === true) { %>The images are duplicates.
 			<% } else { %>The images are different.
 			<% } %>
-		</h3>
+		</h2>
 		</div>
 		<% } %>
 
